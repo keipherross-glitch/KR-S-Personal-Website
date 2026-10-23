@@ -1,80 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset=" UTF-8">
-        <meta name="viewport" content="width-depth-width", intial sclae="1.0">
-        <title>Keipher Ross | Contact</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-      <nav>
-       <span class="logo">Keipher<span class="accent">.</span></span>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keipher Ross | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <main>
-            <header>
-                <div class="page-title">
-                    <h1> Contact</h1>
-                    <p>Feel free to reach out to me for any inquiries!</p>
-                    </div>
-             </header>       
+    <!-- Site header: logo and main navigation -->
+    <header class="site-header">
+        <nav aria-label="Main navigation">
+            <span class="logo">Keipher<span class="accent">.</span></span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-             <section>
-                <h2>Get In Touch</h2>
-                <div class="split">  
-                </div>
-                <p>Whether its an inquiry about anything, or you just want to say hello, I'd love to hear from you!</p>
-             
-                <table>
-                    <tr>
-                        <th>Contact Method</th>
-                        <th>Details</th>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>Keipherross@gmail.com</a></td>
-                    </tr>
-                    <tr>
-                        <td>GitHub</td>
-                        <td>keipherross-glitch</a></td>
-                    </tr>
-                    <tr>
-                        <td>School</td>
-                        <td>T.A Marryshow Community College</td>
-                    </tr>
-                </table>
-            </div>
+    <main>
+        <!-- Page title banner -->
+        <header class="page-title">
+            <h1>Contact</h1>
+            <p>Feel free to reach out to me for any inquiries!</p>
+        </header>
 
-            <div class="hex-glow">
-                <div class="hex">
-                    <img src="images/pic.jpeg" alt="Contact Photo being used">
+        <!-- Two-column layout: contact form on the left, info cards on the right -->
+        <div class="contact-layout">
 
-                </div>
-            </div>
-
-            </section>
-
+            <!-- Contact form -->
             <section>
-                <h2>Let's Work Together!</h2>
-                <p> I'm currently looking to grow my skills and take on new challenges on software engineering
-                    and cloud architecture, if you have any projects that you think I would be a good fit for,
-                    please feel free to reach out to me via email or github!
-                </p>
-                <a class="btn" href="https://mail.google.com/mail/?view=cm&to=keipherross@gmail.com&su=Hello%20Keipher" target="_blank" rel="noopener">Feel Free to Send An Email</a>
+                <h2>Get In Touch</h2>
+                <p>Whether its an inquiry about anything, or you just want to say hello, I'd love to hear from you!</p>
+
+                <form action="mailto:keipherross@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-row">
+                        <div>
+                            <label for="first-name">First Name <span class="required">*</span></label>
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name" autocomplete="given-name" required>
+                        </div>
+                        <div>
+                            <label for="last-name">Last Name <span class="required">*</span></label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Last Name" autocomplete="family-name" required>
+                        </div>
+                    </div>
+
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Message" minlength="10" required></textarea>
+
+                    <button class="btn" type="submit">Submit</button>
+                </form>
             </section>
 
-            <div  class="back-wrapper">
-            <a class="back-link" href="index.html"> Back to Home</a>
-                
-            </div>
-        </main>
+            <!-- Contact details shown as cards -->
+            <aside class="contact-info" aria-label="Contact details">
+                <address class="info-card highlight">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <div>
+                        <h3>Email</h3>
+                        <a href="mailto:keipherross@gmail.com">Keipherross@gmail.com</a>
+                    </div>
+                </address>
 
-    </body>
-    </html>            
+                <address class="info-card">
+                    <span class="icon" aria-hidden="true">&#128187;</span>
+                    <div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/keipherross-glitch" target="_blank" rel="noopener">keipherross-glitch</a>
+                    </div>
+                </address>
+
+                <address class="info-card">
+                    <span class="icon" aria-hidden="true">&#127891;</span>
+                    <div>
+                        <h3>School</h3>
+                        <p>T.A Marryshow Community College</p>
+                    </div>
+                </address>
+
+                <address class="info-card">
+                    <span class="icon" aria-hidden="true">&#128640;</span>
+                    <div>
+                        <h3>Open To</h3>
+                        <p>Software engineering and cloud architecture projects</p>
+                    </div>
+                </address>
+            </aside>
+        </div>
+
+        <!-- Call to action: send an email -->
+        <section>
+            <h2>Let's Work Together!</h2>
+            <p> I'm currently looking to grow my skills and take on new challenges on software engineering
+                and cloud architecture, if you have any projects that you think I would be a good fit for,
+                please feel free to reach out to me via email or github!
+            </p>
+            <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;to=keipherross@gmail.com&amp;su=Hello%20Keipher" target="_blank" rel="noopener">Feel Free to Send An Email</a>
+        </section>
+
+        <!-- Link back to the home page -->
+        <div class="back-wrapper">
+            <a class="back-link" href="index.html">&larr; Back to Home</a>
+        </div>
+    </main>
+
+    <!-- Site footer: copyright -->
+    <footer>
+        <p>&copy; 2026 Keipher Ross</p>
+    </footer>
+
+</body>
+</html>
