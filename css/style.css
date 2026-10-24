@@ -167,7 +167,6 @@ button.btn { width: 100%; margin-top: 20px; border: 0; cursor: pointer; font-fam
 .info-card { display: flex; align-items: center; gap: 18px; background-color: var(--panel); padding: 20px 25px; border-radius: 14px; font-style: normal; }
 .info-card h3 { margin: 0; }
 .info-card p { margin: 0; }
-.info-card .icon { font-size: 1.8rem; }
 .info-card.highlight { background-color: var(--cyan); color: var(--bg); }
 .info-card.highlight h3, .info-card.highlight a { color: var(--bg); font-weight: bold; }
 
