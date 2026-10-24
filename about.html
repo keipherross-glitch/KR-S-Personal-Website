@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keipher Ross | About Me</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Site header: logo and main navigation -->
      <nav>
        <span class="logo">Keipher<span class="accent">.</span></span>
           <ul>
@@ -19,9 +21,14 @@
     </nav>
 
     <main>
+
+        <!-- Page title banner -->
+
         <header class="page-title">
             <h1>About Me</h1>
         </header>
+        
+        <!-- Introduction: who I am and my studies -->
 
         <section>
             <h2>Who is Keipher Ross?</h2> 
@@ -38,6 +45,8 @@
                 <img src="images/school.jpeg" alt="School Work" width="300" height="400">
             </div>
         </section>
+        
+         <!-- Hobbies: sports gallery -->
 
        <section> 
             <h1>What are his Hobbies?</h1>
@@ -59,6 +68,8 @@
                 </figure>
             </div>
         </section>
+        
+         <!-- Hobbies: manhwa feature (image on the right) -->
 
         <section>
             <h2>Manhwa</h2>
@@ -77,26 +88,45 @@
             </div>
         </section>
 
+               <!-- Skillset: list of skills, then two images side by side -->
+
         <section>
+
             <h2>What's my Skillset?</h2>
-            <div class="split">
-                <div>
-                    <p>Here are some of the skills I've developed:</p>
-                    <ul>
-                        <li>Programming in Python and JavaScript for web and system application development</li>
-                        <li>Web Development with HTML, CSS, and JavaScript</li>
-                        <li>Backend Development using Node.js and Express</li>
-                    </ul>
-                </div>
-                <img src="images/codingjavascript.jpeg" alt="Picture of JavaScript being used" width="300" height="400">
+            <p>Here are some of the skills I've developed:</p>
+            <ul>
+                <li>Programming in Python and JavaScript for web and system application development</li>
+                <li>Web Development with HTML, CSS, and JavaScript</li>
+                <li>Backend Development using Node.js and Express</li>
+            </ul>
+
+            <div class="gallery">
+                <figure>
+                    <img src="images/codingjavascript.jpeg" alt="Picture of JavaScript being used" width="300" height="380">
+                    <figcaption>A look at my code</figcaption>
+                </figure>
+
+                <!-- Online image: hosted externally on Unsplash, credited in the caption -->
+                 
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1772235231771-f17980e811e4?q=80&amp;w=1169&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=NHwxMjA3fDA%3D"
+                         alt="Person coding on multiple screens at night" width="300" height="380" loading="lazy">
+                    <figcaption>Photo by Abdullahi Mohamud on <a href="https://unsplash.com/photos/person-coding-on-multiple-screens-at-night-xeCywSyt8Zc" target="_blank" rel="noopener">Unsplash</a></figcaption>
+                </figure>
             </div>
         </section>
+
+        <!-- Link back to the home page -->
 
         <div class="back-wrapper">
             <a class="back-link" href="index.html"> Back to Home</a>
         </div>
     </main>
 
+       <!-- Site footer: copyright -->
+    <footer>
+        <p>&copy; 2026 Keipher Ross</p>
+    </footer>
 
 </body>
 </html>
