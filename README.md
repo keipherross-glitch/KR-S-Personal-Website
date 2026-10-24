@@ -23,7 +23,6 @@ The site is made responsive for screens on mobile, tablet, and desktop devices.
 - Rest of the images are my screenshots/photographs.
 
 ## Reflection
-## Reflection
 
 Developing this website made me reflect on my actual skillset and values, and how to present them for visitors to interact with. My biggest challenges were in CSS and GitHub rather than HTML. In CSS, I struggled with background contrast, and my pictures had different proportions, so I had to crop them to a consistent size. The animations took the longest to add. On GitHub, I created a lowercase images folder because the live site could not find pictures when names used capital letters, since GitHub Pages is case sensitive, so I updated my HTML paths to match.
 
