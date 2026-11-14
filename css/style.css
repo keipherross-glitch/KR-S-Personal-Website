@@ -58,6 +58,8 @@ section {
 /* Footer bar at the bottom of every page */
 
 footer { text-align: center; padding: 20px; background-color: var(--panel); }
+/* Live clock in the footer */
+#live-clock { color: var(--cyan); font-weight: bold; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
 
 /* ===== TYPOGRAPHY AND LINKS ===== */
 h1, h2 { color: var(--cyan); margin-top: 0; }
