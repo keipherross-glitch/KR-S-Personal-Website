@@ -81,3 +81,30 @@ function setupThemeToggle() {
 
 // Set up the toggle when the page loads
 setupThemeToggle()
+
+// ===== FEATURE 4: Character counter for the contact message box =====
+function setupCharacterCounter() {
+    // Find the message box and the line that shows the count
+    const messageBox = document.getElementById("message");
+    const counterElement = document.getElementById("char-count");
+    if (!messageBox || !counterElement) return; // only runs on the contact page
+
+// Read the limit from the textarea's maxlength attribute
+    const maxCharacters = messageBox.maxLength;
+
+// Count what has been typed so far and show it
+    function updateCounter() {
+        const typedCharacters = messageBox.value.length;
+        counterElement.textContent = typedCharacters + " / " + maxCharacters + " characters";
+
+// Warn the visitor when they are within 50 characters of the limit
+        const remaining = maxCharacters - typedCharacters;
+        counterElement.classList.toggle("near-limit", remaining <= 50);
+    }
+
+        // Update the count every time the visitor types, pastes or deletes
+    messageBox.addEventListener("input", updateCounter);
+    updateCounter(); // show the starting count
+}
+// Set up the counter when the page loads
+setupCharacterCounter();
