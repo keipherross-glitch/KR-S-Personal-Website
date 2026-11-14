@@ -53,3 +53,31 @@ function startClock() {
 }
 // Start the clock when the page loads
 startClock();
+
+// ===== FEATURE 3: Dark / light mode toggle =====
+function setupThemeToggle() {
+    // Find the toggle button in the navigation bar
+    const toggleButton = document.getElementById("theme-toggle");
+    if (!toggleButton) return;
+
+ // Apply a theme: add or remove the light-mode class and update the button text
+    function applyTheme(theme) {
+        const isLight = theme === "light";
+        document.body.classList.toggle("light-mode", isLight);
+        toggleButton.textContent = isLight ? "Dark mode" : "Light mode";
+    }
+
+// Restore the visitor's last choice (dark is the default)
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    applyTheme(savedTheme);
+
+// When the button is clicked, switch to the other theme and remember it
+    toggleButton.addEventListener("click", function () {
+        const newTheme = document.body.classList.contains("light-mode") ? "dark" : "light";
+        applyTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    });
+}
+
+// Set up the toggle when the page loads
+setupThemeToggle()
