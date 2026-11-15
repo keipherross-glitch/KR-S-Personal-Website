@@ -6,6 +6,7 @@
   <title>Keipher Ross | Personal Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -18,6 +19,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="contact.html">Contact</a></li>
+       <li><button id="theme-toggle" type="button">Light mode</button></li>
     </ul>
   </nav>
 
@@ -26,7 +28,7 @@
      <!-- Hero: greeting and hexagon photo -->
     <section id="home" class="hero">
       <div>
-        <h3>Hello, It's Me</h3>
+        <h3 id="welcome-message">Hello, It's Me</h3>
         <h1>Keipher <span class="accent">Ross</span></h1>
         <h2>And I'm an aspiring <span class="accent">Software Engineer</span></h2>
         <p> This is a personal website that i've created to showcase who i am, my hobbies,and my work.
@@ -62,28 +64,49 @@
       </div>
     </section>
 
-    <!-- Portfolio preview: skills table and link to the full page -->
-
+    <!-- Portfolio preview: skills table, add-a-skill form and link to the full page -->
+     
     <section id="portfolio">
       <h2>These are my Skills and experience </h2>
       <table>
-        <tr>
-          <th>Skills</th>
-          <th>Level</th>
-        </tr>
-        <tr>
-          <td>HTML</td>
-          <td>Proficient</td>
-        </tr>
-        <tr>
-          <td>CSS</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>GitHub</td>
-          <td>Intermediate</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Skills</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody id="skills-body">
+          <tr>
+            <td>HTML</td>
+            <td>Proficient</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Intermediate</td>
+          </tr>
+          <tr>
+            <td>GitHub</td>
+            <td>Intermediate</td>
+          </tr>
+        </tbody>
       </table>
+
+       <!-- Form: add a new skill to the table (JavaScript feature 5) -->
+
+        <form id="skill-form" class="skill-form">
+        <label for="skill-name">Add a skill</label>
+        <div class="skill-row">
+          <input type="text" id="skill-name" placeholder="e.g. Python" maxlength="30">
+          <select id="skill-level" aria-label="Skill level">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Proficient</option>
+          </select>
+          <button class="btn" type="submit">Add Skill</button>
+        </div>
+        <p id="skill-message" aria-live="polite"></p>
+      </form>
+
       <p><a class="btn" href="portfolio.html">Read more about my portfolio and projects</a></p>
     </section>
 
@@ -95,8 +118,9 @@
     </section>
   </main>
 
-  <!-- Site footer: copyright -->
+  <!-- Site footer: live clock and copyright -->
   <footer>
+    <p id="live-clock" role="timer"></p>
     <p>&copy; 2026 Keipher Ross</p>
   </footer>
 

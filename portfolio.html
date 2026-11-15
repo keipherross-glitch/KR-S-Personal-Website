@@ -7,19 +7,23 @@
   <title>Keipher Ross | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
-     <!-- Site header: logo and main navigation -->
-    <nav>
-       <span class="logo">Keipher<span class="accent">.</span></span>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-    </nav>
+         <!-- Site header: logo and main navigation -->
+    <header class="site-header">
+        <nav aria-label="Main navigation">
+            <span class="logo">Keipher<span class="accent">.</span></span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle" type="button">Light mode</button></li>
+            </ul>
+        </nav>
+    </header>
 
     <main id="main">
 
@@ -129,6 +133,7 @@
             </table>
         </section>
 
+
          <!-- Link back to the home page -->
 
         <div class="back-wrapper">
@@ -136,10 +141,10 @@
         </div>
     </main>
     
- <!-- Site footer: copyright -->
+ <!-- Site footer: live clock and copyright -->
     <footer>
+        <p id="live-clock" role="timer"></p>
         <p>&copy; 2026 Keipher Ross</p>
     </footer>
-
 </body>
 </html>

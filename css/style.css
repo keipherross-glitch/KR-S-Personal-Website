@@ -1,16 +1,22 @@
-/* ===== THEME VARIABLES: change these three to re-theme the whole site ===== */
+/* ===== THEME VARIABLES: colours used across the whole site ===== */
 :root {
     --bg: #1f242d;
     --panel: #323946;
     --cyan: #0ef6ff;
+    --text: #ededed;
+    --border: #555;
 }
+
+/* ===== LIGHT THEME: JavaScript adds the light-mode class to the body ===== */
+/* The variables are swapped, so the whole site changes colour at once */
+body.light-mode { --bg: #f4f6f8; --panel: #ffffff; --cyan: #007c85; --text: #1f242d; --border: #b8c0cc; }
 
 /* ===== BASE STYLES: font, line height and page background ===== */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     line-height: 1.7;
     margin: 0;
-    color: #ededed;
+    color: var(--text);
     background-color: var(--bg);
 }
 
@@ -28,7 +34,7 @@ nav a {
     display: block;
     padding: 18px 14px;
     text-decoration: none;
-    color: white;
+    color: var(--text);
     transition: 0.3s;
 }
 
@@ -37,6 +43,10 @@ nav a:hover {
     color: var(--cyan);
     text-shadow: 0 0 8px var(--cyan);
 }
+
+/* Theme toggle button in the navigation bar (JavaScript feature 3) */
+#theme-toggle { margin-left: 10px; padding: 8px 16px; background: none; color: var(--cyan); border: 1px solid var(--cyan); border-radius: 20px; font-family: inherit; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
+#theme-toggle:hover { background-color: var(--cyan); color: var(--bg); }
 
 /* ===== PAGE LAYOUT ===== */
 /* Centered content column */
@@ -56,14 +66,16 @@ section {
 }
 
 /* Footer bar at the bottom of every page */
-
 footer { text-align: center; padding: 20px; background-color: var(--panel); }
+
+/* Live clock in the footer (JavaScript feature 2) */
+#live-clock { color: var(--cyan); font-weight: bold; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
 
 /* ===== TYPOGRAPHY AND LINKS ===== */
 h1, h2 { color: var(--cyan); margin-top: 0; }
 h3, .accent { color: var(--cyan); }
 a { color: var(--cyan); transition: 0.3s; }
-a:hover { color: white; }
+a:hover { color: var(--text); }
 figure { margin: 0; }
 figcaption { font-size: 0.85rem; font-style: italic; text-align: center; margin-top: 8px; }
 caption { padding: 8px; font-style: italic; }
@@ -135,7 +147,7 @@ section .hex img { width: 100%; height: 100%; border-radius: 0; transform: none;
 
 /* ===== TABLES ===== */
 table { border-collapse: collapse; width: 100%; }
-th, td { border: 1px solid #555; padding: 10px; text-align: left; }
+th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
 th { background-color: var(--cyan); color: var(--bg); }
 
 /* ===== PAGE TITLE BANNER (used on about, portfolio and contact) ===== */
@@ -155,9 +167,19 @@ th { background-color: var(--cyan); color: var(--bg); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 label { display: block; margin: 15px 0 6px; font-weight: bold; }
 .required { color: #ff5c5c; }
+/* Character counter under the message box (JavaScript feature 4) */
+#char-count { text-align: right; font-size: 0.85rem; margin: 6px 0 0; }
+#char-count.near-limit { color: #ff5c5c; font-weight: bold; }
+/* ===== ADD-A-SKILL FORM on the home page (JavaScript feature 5) ===== */
+.skill-form { margin: 25px 0; }
+.skill-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.skill-row input { flex: 1; min-width: 160px; width: auto; }
+.skill-form select { padding: 12px 14px; background-color: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
+.skill-form button.btn { width: auto; margin-top: 0; }
+#skill-message { margin: 8px 0 0; font-size: 0.9rem; min-height: 1.4em; }
 
 /* Form fields with a glowing outline when selected */
-input, textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; background-color: var(--bg); color: #ededed; border: 1px solid #555; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+input, textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; background-color: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
 input:focus, textarea:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
 textarea { min-height: 130px; resize: vertical; }
 button.btn { width: 100%; margin-top: 20px; border: 0; cursor: pointer; font-family: inherit; font-size: 1rem; }
@@ -198,7 +220,7 @@ button.btn { width: 100%; margin-top: 20px; border: 0; cursor: pointer; font-fam
 /* ===== RESPONSIVE: mobile screens (up to 600px wide) ===== */
 @media (max-width: 600px) {
     nav { flex-direction: column; padding: 10px 0; }
-    nav ul { display: flex; flex-wrap: wrap; justify-content: center; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
     .hero, .split, .split.reverse { flex-direction: column; }
     .hex-glow { margin: 0 auto; }
     section img, .split img, .gallery img { width: 100%; height: auto; }
