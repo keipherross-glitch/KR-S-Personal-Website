@@ -108,3 +108,57 @@ function setupCharacterCounter() {
 }
 // Set up the counter when the page loads
 setupCharacterCounter();
+
+// ===== FEATURE 5: Add a skill row to the skills table =====
+function setupSkillForm() {
+    // Find the form, the table body and the message line
+    const skillForm = document.getElementById("skill-form");
+    const skillsBody = document.getElementById("skills-body");
+    const messageElement = document.getElementById("skill-message");
+    if (!skillForm || !skillsBody) return; // only runs on the home page
+
+// Run when the visitor clicks "Add Skill" or presses Enter
+    skillForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // stop the page from reloading
+
+// Get the values the visitor entered
+        const nameInput = document.getElementById("skill-name");
+        const levelSelect = document.getElementById("skill-level");
+        const skillName = nameInput.value.trim();
+        const skillLevel = levelSelect.value;
+
+ // Check the input before adding anything
+        if (skillName === "") {
+            messageElement.textContent = "Please enter a skill name.";
+            return;
+        }
+
+// Stop duplicates: compare with every skill already in the table
+        const alreadyListed = Array.from(skillsBody.rows).some(function (row) {
+            return row.cells[0].textContent.toLowerCase() === skillName.toLowerCase();
+            });
+        if (alreadyListed) {
+            messageElement.textContent = skillName + " is already in the table.";
+            return;
+        }
+
+// Build a new row: <tr><td>skill</td><td>level</td></tr>
+        const newRow = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        const levelCell = document.createElement("td");
+        nameCell.textContent = skillName;
+        levelCell.textContent = skillLevel;
+        newRow.appendChild(nameCell);
+        newRow.appendChild(levelCell);
+        
+// Add the row to the table
+        skillsBody.appendChild(newRow);
+
+// Confirm to the visitor, clear the form and return to the text box
+        messageElement.textContent = skillName + " added to the table.";
+        skillForm.reset();
+        nameInput.focus();
+    });
+}
+// Set up the form when the page loads
+setupSkillForm();

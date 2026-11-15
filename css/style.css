@@ -170,6 +170,13 @@ label { display: block; margin: 15px 0 6px; font-weight: bold; }
 /* Character counter under the message box (JavaScript feature 4) */
 #char-count { text-align: right; font-size: 0.85rem; margin: 6px 0 0; }
 #char-count.near-limit { color: #ff5c5c; font-weight: bold; }
+/* ===== ADD-A-SKILL FORM on the home page (JavaScript feature 5) ===== */
+.skill-form { margin: 25px 0; }
+.skill-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.skill-row input { flex: 1; min-width: 160px; width: auto; }
+.skill-form select { padding: 12px 14px; background-color: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
+.skill-form button.btn { width: auto; margin-top: 0; }
+#skill-message { margin: 8px 0 0; font-size: 0.9rem; min-height: 1.4em; }
 
 /* Form fields with a glowing outline when selected */
 input, textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; background-color: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 1rem; }
